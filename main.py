@@ -1,7 +1,9 @@
+import os
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
-from aiogram.types import ReplyKeyboardRemove, ReplyKeyboardMarkup, KeyboardButton
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+
 global i
 global s
 global x1
@@ -43,7 +45,9 @@ button_getpr= KeyboardButton('Получить значение произвед
 button_again= KeyboardButton('Начать заново')
 button_back= KeyboardButton('Сделать шаг назад')
 
-bot = Bot(token='2141769357:AAGTHpnRU5APhNLE-PNUD3MjmHCHT3oqtVQ')
+TOKEN: str = os.environ.get("bot-token")
+
+bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
 
 
